@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrainBook</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1242/1242351.png">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .modal-header {
+      background-color: #343a40;
+      color: white;
+    }
+
+    .logo-img {
+      height: 40px;
+    }
+
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="https://cdn-icons-png.flaticon.com/512/1242/1242351.png" class="logo-img me-2">
+    <a class="navbar-brand" href="#">TrainBook</a>
+  </div>
+</nav>
+
+<div class="container text-center my-3">
+  <h5 class="fw-bold">Name: Mangesh Kaware | PRN: 1012412125</h5>
+</div>
+
+<div class="container text-center mb-3">
+  <h4 id="greeting" class="fw-semibold text-primary"></h4>
+</div>
+
+<div id="trainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="https://images.pexels.com/photos/985472/pexels-photo-985472.jpeg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Experience Speed and Comfort</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Explore Scenic Routes</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/977213/pexels-photo-977213.jpeg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Safe and Affordable Travel</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/302428/pexels-photo-302428.jpeg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Comfortable Night Journeys</h5>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Connecting Cities Seamlessly</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#trainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#trainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Popular Train Routes</h2>
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1424345/pexels-photo-1424345.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h5>Mumbai to Delhi</h5>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2449453/pexels-photo-2449453.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h5>Bangalore to Chennai</h5>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2902539/pexels-photo-2902539.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h5>Kolkata to Guwahati</h5>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="bookingModal">
+  <div class="modal-dialog">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Train Ticket Booking</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control mb-3" placeholder="Passenger Name" required>
+        <input type="text" class="form-control mb-3" placeholder="From" required>
+        <input type="text" class="form-control mb-3" placeholder="To" required>
+        <input type="date" class="form-control" required>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <p class="fw-bold mb-2">TrainBook – A Cloud Hosted Dynamic Website</p>
+    <p class="mb-1">Designed for Academic Submission</p>
+    <p class="mb-1">Responsive | Secure | User Friendly</p>
+    <p class="mb-0">© 2026 TrainBook. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const hour = new Date().getHours();
+  let greetingText = "";
+
+  if (hour < 12) {
+    greetingText = "Good Morning! Welcome to TrainBook ";
+  } else if (hour < 18) {
+    greetingText = "Good Afternoon! Welcome to TrainBook ";
+  } else {
+    greetingText = "Good Evening! Welcome to TrainBook ";
+  }
+
+  document.getElementById("greeting").innerText = greetingText;
+</script>
+
+</body>
+</html>
